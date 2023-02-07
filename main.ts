@@ -1,5 +1,5 @@
 import { Application, Router } from "https://deno.land/x/oak@v11.1.0/mod.ts";
-import { locations } from "./data.ts";
+import { locations } from "./data/locations.ts";
 
 const app = new Application();
 const router = new Router();
@@ -17,13 +17,11 @@ router
         Math.floor(Math.random() * randomLocation.activities.length)
       ];
 
-    console.log(randomActivity);
-
     context.response.body = {
       data: {
         locationName: randomLocation.name,
         locationType: randomLocation.type,
-        activityName: randomActivity?.name
+        activityName: randomActivity?.name,
         activityDescription: randomActivity?.description,
         vibe: randomActivity?.vibe,
       },
@@ -31,6 +29,6 @@ router
   });
 
 app.use(router.routes());
-app.use(router.allowedMethods()); // TODO: only allow get
+app.use(router.allowedMethods());
 
 await app.listen({ port: 8000 });

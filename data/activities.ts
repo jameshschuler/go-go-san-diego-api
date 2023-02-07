@@ -1,35 +1,6 @@
-const LocationType = {
-  Park: "Park",
-  Neighborhood: "Neighborhood",
-  City: "City",
-} as const;
+import { ActivityRecord, Vibe } from "../types.ts";
 
-type LocationType = typeof LocationType[keyof typeof LocationType];
-
-const Vibe = {
-  Active: "Active",
-  Chill: "Chill",
-} as const;
-
-type Vibe = typeof Vibe[keyof typeof Vibe];
-
-interface ActivityDetail {
-  name: string;
-  description: string;
-  vibe: Vibe;
-}
-
-interface Location {
-  name: string;
-  activities: ActivityDetail[];
-  type: LocationType;
-}
-
-interface Activity {
-  [key: string]: ActivityDetail;
-}
-
-export const Activity: Activity = {
+export const Activity: ActivityRecord = {
   Coffee: {
     name: "Coffee",
     description: "Visit a Coffee Shop",
@@ -136,31 +107,3 @@ export const Activity: Activity = {
     vibe: Vibe.Active,
   },
 };
-
-export const locations: Location[] = [
-  {
-    name: "North Park",
-    activities: [Activity.Coffee, Activity.Restaurant],
-    type: LocationType.Neighborhood,
-  },
-  {
-    name: "Little Italy",
-    activities: [Activity.Coffee, Activity.Restaurant],
-    type: LocationType.Neighborhood,
-  },
-  {
-    name: "Balboa Park",
-    activities: [Activity.Coffee, Activity.Restaurant],
-    type: LocationType.Park,
-  },
-  {
-    name: "Chula Vista",
-    activities: [Activity.Coffee, Activity.Restaurant],
-    type: LocationType.City,
-  },
-  {
-    name: "Mission Beach",
-    activities: [Activity.Coffee, Activity.Restaurant],
-    type: LocationType.Neighborhood,
-  },
-];
