@@ -1,5 +1,4 @@
-import { Location, LocationType } from "../types.ts";
-import { Activity } from "./activities.ts";
+import { Activity, Location, LocationType } from "../types.ts";
 
 export const locations: Location[] = [
   {
@@ -24,6 +23,16 @@ export const locations: Location[] = [
   },
   {
     name: "Mission Beach",
+    activities: [Activity.Coffee, Activity.Restaurant],
+    type: LocationType.Neighborhood,
+  },
+  {
+    name: "La Jolla",
+    activities: [Activity.Coffee, Activity.Restaurant],
+    type: LocationType.Neighborhood,
+  },
+  {
+    name: "South Park",
     activities: [Activity.Coffee, Activity.Restaurant],
     type: LocationType.Neighborhood,
   },

@@ -1,4 +1,5 @@
 import { Application, Router } from "https://deno.land/x/oak@v11.1.0/mod.ts";
+import { ActivityDetails } from "./data/activities.ts";
 import { locations } from "./data/locations.ts";
 
 const app = new Application();
@@ -12,10 +13,12 @@ router
     const randomLocation =
       locations[Math.floor(Math.random() * locations.length)];
 
-    const randomActivity =
+    const randomActivityId =
       randomLocation.activities[
         Math.floor(Math.random() * randomLocation.activities.length)
       ];
+
+    const randomActivity = ActivityDetails[randomActivityId];
 
     context.response.body = {
       data: {
