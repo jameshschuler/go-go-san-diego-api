@@ -1,5 +1,13 @@
 import { Activity, ActivityRecord, Vibe } from "../types.ts";
 
+export const commonActivities = [
+  Activity.Coffee,
+  Activity.Restaurant,
+  Activity.Walk,
+  Activity.Run,
+  Activity.BikeRide,
+];
+
 export const ActivityDetails: ActivityRecord = {
   [Activity.Coffee]: {
     name: "Coffee",
