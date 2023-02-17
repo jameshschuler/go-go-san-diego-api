@@ -46,9 +46,15 @@ export interface ActivityDetail {
   vibe: Vibe;
 }
 
+export interface Coords {
+  longitude: string;
+  latitude: string;
+}
+
 export interface Location {
   name: string;
   activities: number[];
+  coords?: Coords;
   type: LocationType;
 }
 

@@ -25,10 +25,11 @@ router
 
     context.response.body = {
       data: {
+        activityDescription: randomActivity?.description,
+        activityName: randomActivity?.name,
+        coords: randomLocation.coords,
         locationName: randomLocation.name,
         locationType: randomLocation.type,
-        activityName: randomActivity?.name,
-        activityDescription: randomActivity?.description,
         vibe: randomActivity?.vibe,
       },
     };
