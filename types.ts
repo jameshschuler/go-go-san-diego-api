@@ -47,17 +47,26 @@ export interface ActivityDetail {
 }
 
 export interface Coords {
-  longitude: string;
-  latitude: string;
+  longitude: Number;
+  latitude: Number;
 }
 
 export interface Location {
   name: string;
   activities: number[];
-  coords?: Coords;
+  coords?: string;
   type: LocationType;
 }
 
 export interface ActivityRecord {
   [key: number]: ActivityDetail;
+}
+
+export interface ActivityDetailResponse {
+  activityDescription: string;
+  activityName: string;
+  locationName: string;
+  locationType: string;
+  vibe: string;
+  coords?: Coords;
 }
